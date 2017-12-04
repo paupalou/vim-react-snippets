@@ -1,11 +1,11 @@
 # Vim React Snippets
 
-Fork ok [epilande/vim-react-snippets](https://github.com/epilande/vim-react-snippets) that match StandardJS rules.
+Fork of [epilande/vim-react-snippets](https://github.com/epilande/vim-react-snippets) that match StandardJS rules.
 Requires [UltiSnips](https://github.com/SirVer/ultisnips).
 
 Just removed semicolons and added space on function declaration
 
-A Vim snippet library for React in ES6. You may also want to check out [vim-es2015-snippets](https://github.com/epilande/vim-es2015-snippets).
+A Vim snippet library for React in ES6. You may also want to check out [vim-es2015-snippets](https://github.com/paupalou/vim-es2015-snippets).
 
 ## Installation
 
