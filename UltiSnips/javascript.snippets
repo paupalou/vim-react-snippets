@@ -1,108 +1,82 @@
 # React & JSX
 snippet rrcc "React Redux Class Component" b
-import React, { Component} from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import styles from './${2:$1}.css';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 class ${1:`!v expand('%:t:r')`} extends Component {
-	static propTypes = {
-		children: PropTypes.node,
-		className: PropTypes.string,
-		dispatch: PropTypes.func.isRequired,
-	};
+  static propTypes = {
+    $3
+  }
 
-	constructor(props) {
-		super(props);
-	}
+  constructor (props) {
+    super(props)
+  }
 
-	render() {
-		return (
-			<div className={styles.base}>
-				$3
-			</div>
-		);
-	}
+  render () {
+    return (
+      $2
+    )
+  }
 }
 
-function mapStateToProps(state) {
-	return {};
-}
+const mapStateToProps = state => ({
+  $0
+)}
 
-export default connect(mapStateToProps)($1);
+export default connect(mapStateToProps)($1)
 endsnippet
 
 snippet rcc "React Class Component" b
-import React, { Component} from 'react';
-import PropTypes from 'prop-types';
-import styles from './${2:$1}.css';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class ${1:`!v expand('%:t:r')`} extends Component {
-	static propTypes = {
-		children: PropTypes.node,
-		className: PropTypes.string,
-	};
+  static propTypes = {
+    $3
+  }
 
-	constructor(props) {
-		super(props);
-	}
+  constructor (props) {
+    super(props)
+  }
 
-	render() {
-		return (
-			<div className={styles.base}>
-				$3
-			</div>
-		);
-	}
+  render () {
+    return (
+      $2
+    )
+  }
 }
 
-export default $1;
+export default $1
 endsnippet
 
 snippet rfc "React Functional Component" b
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './${2:$1}.css';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-function ${1:`!v expand('%:t:r')`}(${3:{...props}}) {
-	return (
-		<div className={styles.base}>
-			$4
-		</div>
-	);
-}
+const ${1:`!v expand('%:t:r')`} (${3:{...props}}) => (
+  $4
+)
 
-$1.defaultProps = {};
+$1.defaultProps = {}
 
-$1.propTypes = {};
+$1.propTypes = {}
 
-export default $1;
+export default $1
 endsnippet
 
 snippet rsc "React Styled Component" b
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
 	$3
-\`;
+\`
 
-export default $1;
-endsnippet
-
-snippet rsci "React Styled Component Interpolation" b
-import styled, { css } from 'styled-components';
-
-const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`${props => css\`
-	${3:${props.$4 && \`
-		$5
-	\`}}
-\`}\`;
-
-export default $1;
+export default $1
 endsnippet
 
 snippet pp "Get Props"
-${props => props.${1}};
+${props => props.${1}}
 endsnippet
 
 snippet cn "className"
@@ -111,14 +85,14 @@ endsnippet
 
 snippet dp "Default Props" b
 ${1:`!v expand('%:t:r')`.}defaultProps = {
-	$2
-};
+  $2
+}
 endsnippet
 
 snippet set "Set State"
 this.setState({
-	${1}: ${2}
-});
+  ${1}: ${2}
+})
 endsnippet
 
 snippet props "Get Property" i
@@ -130,58 +104,58 @@ this.state.${1}
 endsnippet
 
 snippet ref "Ref" i
-ref={${1:ref} => { this.${2:name} = $1; }}
+ref={${1:ref} => { this.${2:name} = $1 }}
 endsnippet
 
 
 # Component Lifecycle
 snippet cwm "Component Will Mount" b
-componentWillMount() {
-	$1
+componentWillMount () {
+  $1
 }
 endsnippet
 
 snippet cdm "Component Did Mount" b
-componentDidMount() {
-	$1
+componentDidMount () {
+  $1
 }
 endsnippet
 
 snippet cwrp "Component Will Receive Props" b
-componentWillReceiveProps(nextProps) {
-	$1
+componentWillReceiveProps (nextProps) {
+  $1
 }
 endsnippet
 
 snippet scup "Should Component Update" b
-shouldComponentUpdate(nextProps, nextState) {
-	$1
+shouldComponentUpdate (nextProps, nextState) {
+  $1
 }
 endsnippet
 
 snippet cwup "Component Will Update" b
-componentWillUpdate(nextProps, nextState) {
-	$1
+componentWillUpdate (nextProps, nextState) {
+  $1
 }
 endsnippet
 
 snippet cdup "Component Did Update" b
-componentDidUpdate(prevProps, prevState) {
-	$1
+componentDidUpdate (prevProps, prevState) {
+  $1
 }
 endsnippet
 
 snippet cwu "Component Will Unmount" b
-componentWillUnmount() {
+componentWillUnmount () {
 	$1
 }
 endsnippet
 
 snippet ren "Render"
-render() {
-	return ${1:(
-		${2:<div>${3}</div>}
-	);}
+render () {
+  return ${1:(
+    ${2:<div>${3}</div>}
+  )}
 }
 endsnippet
 
@@ -189,8 +163,8 @@ endsnippet
 # PropTypes
 snippet pt "PropTypes Definition" b
 ${1:`!v expand('%:t:r')`.}propTypes = {
-	${2:className}: ${3:PropTypes.string},
-};
+  ${2:className}: ${3:PropTypes.string},
+}
 endsnippet
 
 snippet  pt.a "PropTypes Array" w
